@@ -24,6 +24,31 @@ class UsersController < ApplicationController
     end
   end
 
+  def login_account
+    user = User.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+        create_user_session(user.id, user.user_type)
+        # UNCOMMENT TO USE JWT FOR LOG IN
+        # data = {
+        #   user_id: user.id,
+        #   user_type: user.user_type
+        # }
+        # token = encode_data(data)
+        # app_response(status_code: 200, message: "Login successful", body: {
+        #   user: ActiveModelSerializers::SerializableResource.new(user, serializer: UserSerializer),
+        #   token: token
+        # })
+        app_response(message: "Log in success", body: user)
+    else
+        app_response(status_code: 401, message: "Invalid username or password")
+    end
+end
+
+def logout_account
+    delete_user_session
+    app_response(status_code: 200, message: "Log out successfully")
+end
+
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
