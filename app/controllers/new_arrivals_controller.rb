@@ -46,6 +46,6 @@ class NewArrivalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def new_arrival_params
-      params.require(:new_arrival).permit(:name, :price, :category, :description, :image_url, :available, :user_id)
+      params.require(:new_arrival).permit(:name, :price, :description, :image_url, :available, :user_id)
     end
 end
