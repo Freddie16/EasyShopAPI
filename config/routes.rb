@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :products
   resources :users,only: [:create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'favicon.ico', to: redirect('/assets/favicon.ico')
 
   # Defines the root path route ("/")
   # root "articles#index"

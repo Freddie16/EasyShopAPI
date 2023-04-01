@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_01_200226) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_01_202410) do
   create_table "carts", force: :cascade do |t|
     t.string "product"
     t.integer "quantity"
@@ -27,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_01_200226) do
   create_table "new_arrivals", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.string "category"
     t.text "description"
     t.string "image_url"
     t.integer "available"
