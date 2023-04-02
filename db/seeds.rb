@@ -1,7 +1,5 @@
-
-
-Category.create(id: 1, name: 'Male')
-Category.create(id: 2, name: 'Female')
+Category.create(name: 'Male')
+Category.create(name: 'Female')
 
 
 # Create a user
