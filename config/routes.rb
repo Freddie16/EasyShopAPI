@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/login', to: 'sessions#create'
   resources :new_arrivals
   resources :users
   resources :categories
